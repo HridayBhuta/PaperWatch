@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+PROJECT_ROOT="full/path/to/repo"
+PYTHON="full/path/to/python"
+
+cd "$PROJECT_ROOT" || exit 1
+
+# List of keywords (same as config.yaml)
+KEYWORDS=("YOUR RELEVANT TOPICS HERE")
+
+for KEYWORD in "${KEYWORDS[@]}"; do
+    echo "Running PaperWatch for keyword: $KEYWORD"
+    $PYTHON paperwatch/cli.py --topic "$KEYWORD"
+done
