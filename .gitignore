@@ -3,7 +3,8 @@
 
 # Personal Files
 config/config.yaml
-cron/
+cron/run.sh
+cron/paperwatch.cron
 downloads/
 notify.py
 
