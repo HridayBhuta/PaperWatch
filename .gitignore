@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+
+# Personal Files
+config/config.yaml
+cron/
+downloads/
+notify.py
+
+# Python cache files
+__pycache__/
+fetchers/__pycache__/
+
+# Log files
+logs/*.log

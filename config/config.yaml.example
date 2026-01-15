@@ -1,0 +1,12 @@
+keywords:
+  - add your interested topics here
+
+arxiv:
+  recent: 10 // change upto your descretion
+  relevance: 10
+
+storage:
+  download_path: your_download_path_here
+
+logging:
+  file: logs/paperwatch.log
