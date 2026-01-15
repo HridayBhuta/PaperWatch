@@ -39,10 +39,10 @@ An automated research paper tracker that fetches, filters, and downloads papers 
 
 3. Create your configuration file:
    ```bash
-   cp config/config.yaml.example config/config.yaml
+   cp src/config/config.yaml.example src/config/config.yaml
    ```
 
-4. Edit `config/config.yaml` with your preferences (see [Configuration](#configuration))
+4. Edit `src/config/config.yaml` with your preferences (see [Configuration](#configuration))
 
 ## Usage
 
@@ -50,17 +50,17 @@ An automated research paper tracker that fetches, filters, and downloads papers 
 
 Search for a specific topic:
 ```bash
-poetry run python cli.py --topic "machine learning"
+poetry run python src/cli.py --topic "machine learning"
 ```
 
 Search for all keywords defined in your config:
 ```bash
-poetry run python cli.py
+poetry run python src/cli.py
 ```
 
 ### Configuration
 
-Edit `config/config.yaml` to customize PaperWatch:
+Edit `src/config/config.yaml` to customize PaperWatch:
 
 ```yaml
 keywords:
@@ -75,7 +75,7 @@ storage:
   download_path: downloads/papers
 
 logging:
-  file: logs/paperwatch.log
+  file: src/logs/paperwatch.log
 ```
 
 ### Automated Runs with Cron
@@ -87,9 +87,9 @@ logging:
 
 2. Edit `cron/run.sh` to set your paths and keywords:
    ```bash
-   PROJECT_ROOT="full/path/to/repo"
-   PYTHON="full/path/to/python"
-   KEYWORDS=("machine learning" "deep learning" "transformers")
+   PROJECT_ROOT="FULL/PATH/TO/REPO"
+   PYTHON="FULL/PATH/TO/PYTHON"
+   KEYWORDS=("YOUR RELEVANT KEYWORDS")
    ```
 
 3. Make it executable:
@@ -107,20 +107,21 @@ logging:
 
 ```
 paperwatch/
-├── cli.py
-├── config.py
-├── filters.py
-├── storage.py
-├── utils.py
-├── fetchers/
-│   └── arxiv.py
-├── config/
-│   └── config.yaml.example
+├── pyproject.toml
 ├── cron/
-│   ├── run.sh.example
-│   └── paperwatch.cron
-├── downloads/
-└── logs/
+│   └── run.sh.example
+└── src/
+    ├── cli.py
+    ├── config.py
+    ├── filters.py
+    ├── notify.py
+    ├── storage.py
+    ├── utils.py
+    ├── config/
+    │   └── config.yaml.example
+    ├── fetchers/
+    │   └── arxiv.py
+    └── logs/
 ```
 
 ## How It Works
