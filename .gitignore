@@ -2,7 +2,7 @@
 .venv/
 
 # Personal Files
-config/config.yaml
+src/config/config.yaml
 cron/run.sh
 cron/paperwatch.cron
 downloads/
@@ -13,4 +13,4 @@ __pycache__/
 fetchers/__pycache__/
 
 # Log files
-logs/*.log
+src/logs/*.log
